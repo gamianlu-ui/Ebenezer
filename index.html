@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://i.ibb.co/C3yvWq8p/idm-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Financeiro IDM Oficial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      html, body {
+        height: 100%;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #020617;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        color: #f8fafc;
+        -webkit-tap-highlight-color: transparent;
+      }
+      
+      :fullscreen {
+        background-color: #020617;
+      }
+      
+      .safe-top {
+        padding-top: env(safe-area-inset-top);
+      }
+      
+      .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      
+      @keyframes tutorialBlink {
+        0% { outline: 6px solid #3b82f6; outline-offset: 4px; box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.8); filter: brightness(1.2); }
+        50% { outline: 6px solid #60a5fa; outline-offset: 12px; box-shadow: 0 0 30px 15px rgba(59, 130, 246, 0.4); filter: brightness(1.5); }
+        100% { outline: 6px solid #3b82f6; outline-offset: 4px; box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); filter: brightness(1.2); }
+      }
+      
+      .tutorial-highlight-blink {
+        animation: tutorialBlink 1.2s infinite ease-in-out;
+        z-index: 600 !important;
+        position: relative;
+        pointer-events: none;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar { width: 3px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #334155; }
+      
+      @keyframes highlightFade {
+        0% { background-color: rgba(59, 130, 246, 0.2); }
+        100% { background-color: transparent; }
+      }
+      
+      .new-item-highlight {
+        animation: highlightFade 1.5s ease-out forwards;
+      }
+
+      select, input {
+        appearance: none;
+        -webkit-appearance: none;
+      }
+    </style>
+</head>
+  <body>
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      // Desativa e apaga qualquer Service Worker antigo para restaurar o comportamento original do navegador
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (const registration of registrations) {
+            registration.unregister()
+              .then(() => console.log('Service Worker antigo removido com sucesso de forma limpa.'))
+              .catch((err) => console.error('Erro ao remover Service Worker antigo:', err));
+          }
+        }).catch((err) => {
+          console.error('Erro ao recuperar registros de Service Worker:', err);
+        });
+      }
+    </script>
+  </body>
+</html>

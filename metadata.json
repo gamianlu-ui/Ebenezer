@@ -1,0 +1,11 @@
+{
+  "name": "Remix: Relatório Financeiro IDM",
+  "description": "Sistema inteligente para preenchimento de relatórios financeiros da Igreja de Deus Missionária com correção automática de texto e comandos de voz.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

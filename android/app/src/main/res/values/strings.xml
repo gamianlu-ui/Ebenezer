@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Relatorio Financeiro IDM</string>
+    <string name="title_activity_main">Relatorio Financeiro IDM</string>
+    <string name="package_name">com.idm.relatorio_financeiro</string>
+    <string name="custom_url_scheme">com.idm.relatorio_financeiro</string>
+</resources>

@@ -1,0 +1,8 @@
+{
+  "appId": "com.idm.relatorio_financeiro",
+  "appName": "Relatorio Financeiro IDM",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
